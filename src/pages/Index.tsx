@@ -6,7 +6,7 @@ import { SocialLinks } from '@/components/Portfolio/SocialLinks';
 import { Gallery } from '@/components/Portfolio/Gallery';
 import { ThemeToggle } from '@/components/Portfolio/ThemeToggle';
 import { AdminToggle } from '@/components/Portfolio/AdminToggle';
-import { AdminPanel } from '@/components/Admin/AdminPanel';
+import { AdminSidebar } from '@/components/Admin/AdminSidebar';
 
 const Index = () => {
   const {
@@ -70,8 +70,8 @@ const Index = () => {
         </footer>
       </main>
       
-      {/* Admin Panel */}
-      <AdminPanel
+      {/* Admin Sidebar */}
+      <AdminSidebar
         isOpen={isAdminOpen}
         onClose={() => setIsAdminOpen(false)}
         config={config}
