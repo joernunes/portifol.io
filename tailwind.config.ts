@@ -22,6 +22,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          glow: "hsl(var(--primary-glow))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -56,6 +57,14 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        social: {
+          twitter: "hsl(var(--social-twitter))",
+          github: "hsl(var(--social-github))",
+          linkedin: "hsl(var(--social-linkedin))",
+          instagram: "hsl(var(--social-instagram))",
+          youtube: "hsl(var(--social-youtube))",
+          dribbble: "hsl(var(--social-dribbble))",
         },
       },
       borderRadius: {
