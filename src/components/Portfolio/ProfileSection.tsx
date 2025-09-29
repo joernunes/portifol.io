@@ -12,15 +12,15 @@ export const ProfileSection = ({ personalInfo }: ProfileSectionProps) => {
           <img
             src={personalInfo.profileImage}
             alt={personalInfo.name}
-            className="w-full h-full object-cover hover-lift"
+            className="w-full h-full object-cover"
             onError={(e) => {
               e.currentTarget.src = 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face';
             }}
           />
         </div>
-        <div className="absolute -bottom-2 -right-0 w-8 h-8 rounded-full border-none border-background flex items-center justify-center">
+        {/* <div className="absolute -bottom-2 -right-0 w-8 h-8 rounded-full border-none border-background flex items-center justify-center">
           <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-        </div>
+        </div> */}
       </div>
       
       <div className="space-y-2">

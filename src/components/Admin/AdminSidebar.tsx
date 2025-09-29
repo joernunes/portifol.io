@@ -231,10 +231,10 @@ export const AdminSidebar = ({
               </div>
               <p>Feito na França com ❤️</p>
           </div>
-        </div>
+        
 
         {/* Footer fixo com botões de ação */}
-       {/*  <div className="border-t border-[#2a2a2a] p-4 mt-auto">
+       <div className="border-t border-[#2a2a2a] p-4 mt-auto">
           <div className="flex gap-3">
             <Button
               variant="outline"
@@ -245,12 +245,13 @@ export const AdminSidebar = ({
             </Button>
             <Button
               onClick={handleSave}
-              className="flex-1 bg-blue-600 text-white hover:bg-blue-700"
+              className="flex-1 bg-[#1C1C1E] text-white hover:bg-[#2a2a2a]"
             >
               Salvar
             </Button>
           </div>
-        </div> */}
+        </div>
+        </div>
       </div>
     </>
   );
