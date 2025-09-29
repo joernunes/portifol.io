@@ -5,24 +5,30 @@ import { Button } from '@/components/ui/button';
 interface AdminToggleProps {
   onClick: () => void;
 }
-
 export const AdminToggle = ({ onClick }: AdminToggleProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [mouseTimeout, setMouseTimeout] = useState<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    const handleMouseMove = () => {
-      setIsVisible(true);
+    const handleMouseMove = (e: MouseEvent) => {
+      // Verifica se o cursor está próximo ao canto inferior direito (últimos 100px)
+      const isNearBottomRight = 
+        window.innerHeight - e.clientY < 100 && 
+        window.innerWidth - e.clientX < 100;
+      
+      setIsVisible(isNearBottomRight);
       
       if (mouseTimeout) {
         clearTimeout(mouseTimeout);
       }
       
-      const timeout = setTimeout(() => {
-        setIsVisible(false);
-      }, 3000);
-      
-      setMouseTimeout(timeout);
+      if (isNearBottomRight) {
+        const timeout = setTimeout(() => {
+          setIsVisible(false);
+        }, 2000); // Esconde após 2 segundos sem movimento
+        
+        setMouseTimeout(timeout);
+      }
     };
 
     document.addEventListener('mousemove', handleMouseMove);
@@ -34,6 +40,7 @@ export const AdminToggle = ({ onClick }: AdminToggleProps) => {
       }
     };
   }, [mouseTimeout]);
+
   return (
     <Button
       variant="admin"
