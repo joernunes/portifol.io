@@ -35,20 +35,20 @@ export const GalleryTab = ({ gallery, onChange }: GalleryTabProps) => {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h3 className="text-lg font-medium">Gallery</h3>
-        <Button onClick={addGalleryItem} variant="outline">
+        <Button onClick={addGalleryItem} className="bg-[#39383D]" variant="outline">
           Add Image
         </Button>
       </div>
       
       {gallery.map((item) => (
-        <div key={item.id} className="p-4 border rounded-lg space-y-4">
+        <div key={item.id} className="p-4 border-none rounded-lg space-y-4">
           <div className="flex justify-between items-center">
             <h4 className="font-medium">Gallery Image</h4>
             <Button
               variant="ghost"
               size="icon"
               onClick={() => removeGalleryItem(item.id)}
-              className="text-destructive hover:text-destructive"
+              className="bg-[#39383D]text-destructive hover:text-destructive"
             >
               <TrashIcon className="w-4 h-4" />
             </Button>
@@ -58,6 +58,7 @@ export const GalleryTab = ({ gallery, onChange }: GalleryTabProps) => {
             <Label>Image URL</Label>
             <Input
               value={item.image}
+              className="bg-[#39383D]"
               onChange={(e) => updateGalleryItem(item.id, 'image', e.target.value)}
               placeholder="https://example.com/image.jpg"
             />
@@ -67,6 +68,7 @@ export const GalleryTab = ({ gallery, onChange }: GalleryTabProps) => {
             <Label>Alt Text</Label>
             <Input
               value={item.alt}
+              className="bg-[#39383D]"
               onChange={(e) => updateGalleryItem(item.id, 'alt', e.target.value)}
               placeholder="Description of the image"
             />

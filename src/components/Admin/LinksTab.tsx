@@ -62,20 +62,20 @@ export const LinksTab = ({ links, onChange }: LinksTabProps) => {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h3 className="text-lg font-medium">Portfolio Links</h3>
-        <Button onClick={addLink} variant="outline">
+        <Button onClick={addLink} className="bg-[#39383D]" variant="outline">
           Add Link
         </Button>
       </div>
       
       {links.map((link) => (
-        <div key={link.id} className="p-4 border rounded-lg space-y-4">
+        <div key={link.id} className="p-4 rounded-lg space-y-4">
           <div className="flex justify-between items-center">
             <h4 className="font-medium">Link Settings</h4>
             <Button
               variant="ghost"
               size="icon"
               onClick={() => removeLink(link.id)}
-              className="text-destructive hover:text-destructive"
+              className="text-destructive hover:text-destructive bg-[#39383D]"
             >
               <TrashIcon className="w-4 h-4" />
             </Button>
@@ -86,6 +86,7 @@ export const LinksTab = ({ links, onChange }: LinksTabProps) => {
               <Label>Title</Label>
               <Input
                 value={link.title}
+                className="bg-[#39383D]"
                 onChange={(e) => updateLink(link.id, 'title', e.target.value)}
               />
             </div>
@@ -94,6 +95,7 @@ export const LinksTab = ({ links, onChange }: LinksTabProps) => {
               <Label>URL</Label>
               <Input
                 value={link.url}
+                className="bg-[#39383D]"
                 onChange={(e) => updateLink(link.id, 'url', e.target.value)}
               />
             </div>
@@ -103,6 +105,7 @@ export const LinksTab = ({ links, onChange }: LinksTabProps) => {
             <Label>Description</Label>
             <Textarea
               value={link.description}
+              className="bg-[#39383D] resize-none"
               onChange={(e) => updateLink(link.id, 'description', e.target.value)}
               rows={2}
             />
@@ -113,12 +116,13 @@ export const LinksTab = ({ links, onChange }: LinksTabProps) => {
               <Label>Icon</Label>
               <Select
                 value={link.icon}
+                
                 onValueChange={(value) => updateLink(link.id, 'icon', value)}
               >
-                <SelectTrigger>
+                <SelectTrigger className="bg-[#39383D]">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-[#39383D]">
                   {iconOptions.map((option) => (
                     <SelectItem key={option.value} value={option.value}>
                       {option.label}
@@ -134,10 +138,10 @@ export const LinksTab = ({ links, onChange }: LinksTabProps) => {
                 value={link.bgColor}
                 onValueChange={(value) => updateLink(link.id, 'bgColor', value)}
               >
-                <SelectTrigger>
+                <SelectTrigger className="bg-[#39383D]">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-[#39383D]">
                   {colorOptions.map((option) => (
                     <SelectItem key={option.value} value={option.value}>
                       {option.label}

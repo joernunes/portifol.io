@@ -81,20 +81,20 @@ export const JSONTab = ({ config, onChange, onExport, onImport, onReset }: JSONT
       <div className="space-y-2">
         <Label htmlFor="json-config">Configuration JSON</Label>
         <Textarea
-          id="json-config"
-          value={jsonText}
-          onChange={(e) => setJsonText(e.target.value)}
-          rows={20}
-          className="font-mono text-sm"
-          placeholder="Paste your JSON configuration here..."
-        />
+  id="json-config"
+  value={jsonText}
+  onChange={(e) => setJsonText(e.target.value)}
+  className="font-mono text-sm opacity-80 w-full h-[120px] min-h-[120px] max-h-[3000px] my-1.5 py-4 tab-[1.5] cursor-pointer rounded-[10px] text-white bg-[#39383D] transition-[min-height] duration-100 ease-in-out"
+  placeholder="Paste your JSON configuration here..."
+  rows={20}
+/>
       </div>
       
       <div className="grid grid-cols-2 gap-4">
-        <Button onClick={handleApplyJSON} variant="outline">
+        <Button onClick={handleApplyJSON} className="bg-[#39383D]" variant="outline">
           Apply JSON
         </Button>
-        <Button onClick={onExport} variant="outline">
+        <Button onClick={onExport} className="bg-[#39383D]" variant="outline">
           Export File
         </Button>
       </div>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { usePortfolioConfig } from '@/hooks/usePortfolioConfig';
 import { ProfileSection } from '@/components/Portfolio/ProfileSection';
 import { LinkCard } from '@/components/Portfolio/LinkCard';
@@ -20,6 +20,18 @@ const Index = () => {
   } = usePortfolioConfig();
   
   const [isAdminOpen, setIsAdminOpen] = useState(false);
+
+  // Aplicar tema ao carregar a página e quando o tema mudar
+  useEffect(() => {
+    const root = window.document.documentElement;
+    if (config.settings.theme === 'dark') {
+      root.classList.add('dark');
+      root.style.colorScheme = 'dark';
+    } else {
+      root.classList.remove('dark');
+      root.style.colorScheme = 'light';
+    }
+  }, [config.settings.theme]);
 
   const handleThemeToggle = (theme: 'light' | 'dark') => {
     const newConfig = {
@@ -48,7 +60,6 @@ const Index = () => {
       
       {/* Admin Controls */}
       <AdminToggle onClick={() => setIsAdminOpen(true)} />
-      <ThemeToggle theme={config.settings.theme} onToggle={handleThemeToggle} />
       
       {/* Main Content */}
       <main className="relative z-10 max-w-2xl mx-auto px-6 py-16">
@@ -79,6 +90,8 @@ const Index = () => {
         onReset={resetConfig}
         onExport={exportConfig}
         onImport={importConfig}
+        theme={config.settings.theme}
+        onToggleTheme={handleThemeToggle}
       />
     </div>
   );

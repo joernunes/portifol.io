@@ -15,7 +15,7 @@ export const Gallery = ({ gallery }: GalleryProps) => {
         {gallery.map((item) => (
           <Dialog key={item.id}>
             <DialogTrigger asChild>
-              <div className="aspect-square cursor-pointer hover-lift portfolio-shadow hover:portfolio-glow rounded-lg overflow-hidden">
+              <div className="aspect-square cursor-pointer hover-lift  hover:portfolio-glow rounded-lg overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.alt}

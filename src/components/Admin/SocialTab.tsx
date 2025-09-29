@@ -63,20 +63,20 @@ export const SocialTab = ({ social, onChange }: SocialTabProps) => {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h3 className="text-lg font-medium">Social Links</h3>
-        <Button onClick={addSocial} variant="outline">
+        <Button onClick={addSocial} className="bg-[#39383D]" variant="outline">
           Add Social Link
         </Button>
       </div>
       
       {social.map((item) => (
-        <div key={item.id} className="p-4 border rounded-lg space-y-4">
+        <div key={item.id} className="p-4 border-none rounded-lg space-y-4">
           <div className="flex justify-between items-center">
             <h4 className="font-medium">Social Link</h4>
             <Button
               variant="ghost"
               size="icon"
               onClick={() => removeSocial(item.id)}
-              className="text-destructive hover:text-destructive"
+              className="bg-[#39383D] text-destructive hover:text-destructive"
             >
               <TrashIcon className="w-4 h-4" />
             </Button>
@@ -92,10 +92,10 @@ export const SocialTab = ({ social, onChange }: SocialTabProps) => {
                   updateSocial(item.id, 'icon', value);
                 }}
               >
-                <SelectTrigger>
+                <SelectTrigger className="bg-[#39383D]">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-[#39383D]">
                   {platformOptions.map((option) => (
                     <SelectItem key={option.value} value={option.value}>
                       {option.label}
@@ -110,11 +110,12 @@ export const SocialTab = ({ social, onChange }: SocialTabProps) => {
               <Select
                 value={item.bgColor}
                 onValueChange={(value) => updateSocial(item.id, 'bgColor', value)}
+               
               >
-                <SelectTrigger>
+                <SelectTrigger className="bg-[#39383D]">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-[#39383D]">
                   {colorOptions.map((option) => (
                     <SelectItem key={option.value} value={option.value}>
                       {option.label}
@@ -129,6 +130,7 @@ export const SocialTab = ({ social, onChange }: SocialTabProps) => {
             <Label>URL</Label>
             <Input
               value={item.url}
+              className="bg-[#39383D]"
               onChange={(e) => updateSocial(item.id, 'url', e.target.value)}
               placeholder="https://platform.com/username"
             />

@@ -18,7 +18,7 @@ export const ProfileSection = ({ personalInfo }: ProfileSectionProps) => {
             }}
           />
         </div>
-        <div className="absolute -bottom-2 -right-2 w-8 h-8 portfolio-gradient rounded-full border-4 border-background flex items-center justify-center">
+        <div className="absolute -bottom-2 -right-0 w-8 h-8 rounded-full border-none border-background flex items-center justify-center">
           <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
         </div>
       </div>

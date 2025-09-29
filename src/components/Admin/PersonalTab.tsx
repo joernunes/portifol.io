@@ -20,6 +20,7 @@ export const PersonalTab = ({ personalInfo, onChange }: PersonalTabProps) => {
         <Input
           id="name"
           value={personalInfo.name}
+          className="bg-[#39383D]" 
           onChange={(e) => handleChange('name', e.target.value)}
           placeholder="Your full name"
         />
@@ -30,6 +31,7 @@ export const PersonalTab = ({ personalInfo, onChange }: PersonalTabProps) => {
         <Input
           id="title"
           value={personalInfo.title}
+          className="bg-[#39383D]" 
           onChange={(e) => handleChange('title', e.target.value)}
           placeholder="Your professional title"
         />
@@ -40,6 +42,7 @@ export const PersonalTab = ({ personalInfo, onChange }: PersonalTabProps) => {
         <Textarea
           id="bio"
           value={personalInfo.bio}
+          className="bg-[#39383D] resize-none" 
           onChange={(e) => handleChange('bio', e.target.value)}
           placeholder="Tell people about yourself..."
           rows={4}
@@ -51,6 +54,7 @@ export const PersonalTab = ({ personalInfo, onChange }: PersonalTabProps) => {
         <Input
           id="profileImage"
           value={personalInfo.profileImage}
+          className="bg-[#39383D]" 
           onChange={(e) => handleChange('profileImage', e.target.value)}
           placeholder="https://example.com/your-photo.jpg"
         />

@@ -34,13 +34,12 @@ export const AdminToggle = ({ onClick }: AdminToggleProps) => {
       }
     };
   }, [mouseTimeout]);
-
   return (
     <Button
       variant="admin"
       size="icon"
       onClick={onClick}
-      className={`fixed top-4 left-4 z-50 w-12 h-12 rounded-full portfolio-shadow hover:portfolio-glow bg-background/80 backdrop-blur-sm hover-bounce transition-all duration-300 ${
+      className={`fixed bottom-5 right-5 z-50 w-12 h-12 rounded-full bg-background/80 backdrop-blur-sm transition-all duration-300 ${
         isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
       }`}
       aria-label="Open admin panel"
