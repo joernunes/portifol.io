@@ -46,7 +46,7 @@ export const defaultConfig: PortfolioConfig = {
     name: "Joel Nunes",
     title: "Digital Creator & Designer",
     bio: "Transforming ideas into beautiful digital experiences. Passionate about design, technology, and creative storytelling.",
-    profileImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+    profileImage: "https://files.on.adaptive.ai/cdn/tYzLbRajCCfTC4cTt7tfAJzmad2xWF4j-9-tcz-9-qejejblpywl.png"
   },
   links: [
     {
