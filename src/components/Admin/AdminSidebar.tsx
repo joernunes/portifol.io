@@ -98,11 +98,11 @@ export const AdminSidebar = ({
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-full w-96 bg-[#121212] text-white z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-full w-full sm:w-96 bg-[#121212] text-white z-50 transform transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } flex flex-col`}
-      > {/* Content com uma única barra de rolagem */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-6 mt-4">
+      >
+        <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-4 sm:space-y-6 mt-4">
         {/* Header */}
         {/* <div className="flex items-center justify-between  ">
           
@@ -141,7 +141,7 @@ export const AdminSidebar = ({
             <h3 className="text-xs font-bold uppercase text-gray-500 tracking-wider px-1">
               Aparência
             </h3>
-            <div className="bg-[#1C1C1E] rounded-lg p-4 space-y-4">
+            <div className="bg-[#1C1C1E] rounded-lg p-3 sm:p-4 space-y-3 sm:space-y-4">
               <div className="flex items-center justify-between">
                 <div>
                   <h4 className="text-sm font-semibold text-gray-200">Tema</h4>
@@ -171,7 +171,7 @@ export const AdminSidebar = ({
             <h3 className="text-xs font-bold uppercase text-gray-500 tracking-wider px-1">
               Conteúdo
             </h3>
-            <div className="bg-[#1C1C1E] rounded-lg p-4 space-y-6">
+            <div className="bg-[#1C1C1E] rounded-lg p-3 sm:p-4 space-y-4 sm:space-y-6">
               <div>
                 <h4 className="text-sm font-semibold text-gray-200 mb-4">Links</h4>
                 <LinksTab
@@ -234,8 +234,8 @@ export const AdminSidebar = ({
         
 
         {/* Footer fixo com botões de ação */}
-       <div className="border-t border-[#2a2a2a] p-4 mt-auto">
-          <div className="flex gap-3">
+       <div className="border-t border-[#2a2a2a] p-3 sm:p-4 mt-auto">
+          <div className="flex flex-col sm:flex-row gap-3">
             <Button
               variant="outline"
               onClick={handleCancel}

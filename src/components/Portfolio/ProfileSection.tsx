@@ -14,7 +14,7 @@ export const ProfileSection = ({ personalInfo }: ProfileSectionProps) => {
             alt={personalInfo.name}
             className="w-full h-full object-cover"
             onError={(e) => {
-              e.currentTarget.src = 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face';
+              e.currentTarget.src = 'https://files.on.adaptive.ai/cdn/tYzLbRajCCfTC4cTt7tfAJzmad2xWF4j-9-tcz-9-qejejblpywl.png';
             }}
           />
         </div>
