@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { GalleryItem } from '@/types/portfolio';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
@@ -5,7 +6,7 @@ interface GalleryProps {
   gallery: GalleryItem[];
 }
 
-export const Gallery = ({ gallery }: GalleryProps) => {
+export const Gallery = memo(({ gallery }: GalleryProps) => {
   if (gallery.length === 0) return null;
 
   return (
@@ -41,4 +42,6 @@ export const Gallery = ({ gallery }: GalleryProps) => {
       </div>
     </section>
   );
-};
+});
+
+Gallery.displayName = 'Gallery';
