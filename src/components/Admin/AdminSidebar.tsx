@@ -137,12 +137,12 @@ export const AdminSidebar = ({
           </div>
           
           {/* Seção APARÊNCIA */}
-          <div className="space-y-2">
+          {/*<div className="space-y-2">
             <h3 className="text-xs font-bold uppercase text-gray-500 tracking-wider px-1">
               Aparência
             </h3>
             <div className="bg-[#1C1C1E] rounded-lg p-3 sm:p-4 space-y-3 sm:space-y-4">
-              <div className="flex items-center justify-between">
+               <div className="flex items-center justify-between">
                 <div>
                   <h4 className="text-sm font-semibold text-gray-200">Tema</h4>
                   <p className="text-xs text-gray-400">
@@ -162,9 +162,9 @@ export const AdminSidebar = ({
                     <SunIcon className="w-4 h-4" />
                   )}
                 </Button>
-              </div>
+              </div> 
             </div>
-          </div>
+          </div>*/}
 
           {/* Seção CONTEÚDO com os componentes LinksTab, SocialTab, e GalleryTab */}
           <div className="space-y-2">

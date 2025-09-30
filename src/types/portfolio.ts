@@ -125,6 +125,6 @@ export const defaultConfig: PortfolioConfig = {
     }
   ],
   settings: {
-    theme: 'light'
+    theme: 'dark'
   }
 };

@@ -84,7 +84,7 @@ export const JSONTab = ({ config, onChange, onExport, onImport, onReset }: JSONT
   id="json-config"
   value={jsonText}
   onChange={(e) => setJsonText(e.target.value)}
-  className="font-mono text-sm opacity-80 w-full h-[120px] min-h-[120px] max-h-[3000px] my-1.5 py-4 tab-[1.5] cursor-pointer rounded-[10px] text-white bg-[#39383D] transition-[min-height] duration-100 ease-in-out"
+  className="font-mono text-sm opacity-80 w-full h-[200px] min-h-[120px] max-h-[3000px] my-1.5 py-4 tab-[1.5] cursor-pointer rounded-[10px] text-white bg-[#39383D] transition-[min-height] resize-none duration-100 ease-in-out"
   placeholder="Paste your JSON configuration here..."
   rows={20}
 />

@@ -4,7 +4,6 @@ import { ProfileSection } from '@/components/Portfolio/ProfileSection';
 import { LinkCard } from '@/components/Portfolio/LinkCard';
 import { SocialLinks } from '@/components/Portfolio/SocialLinks';
 import { Gallery } from '@/components/Portfolio/Gallery';
-import { ThemeToggle } from '@/components/Portfolio/ThemeToggle';
 import { AdminToggle } from '@/components/Portfolio/AdminToggle';
 import { AdminSidebar } from '@/components/Admin/AdminSidebar';
 
@@ -21,26 +20,12 @@ const Index = () => {
   
   const [isAdminOpen, setIsAdminOpen] = useState(false);
 
-  // Aplicar tema ao carregar a página e quando o tema mudar
+  // Aplicar tema escuro ao carregar a página
   useEffect(() => {
     const root = window.document.documentElement;
-    if (config.settings.theme === 'dark') {
-      root.classList.add('dark');
-      root.style.colorScheme = 'dark';
-    } else {
-      root.classList.remove('dark');
-      root.style.colorScheme = 'light';
-    }
-  }, [config.settings.theme]);
-
-  const handleThemeToggle = (theme: 'light' | 'dark') => {
-    const newConfig = {
-      ...config,
-      settings: { ...config.settings, theme }
-    };
-    setConfig(newConfig);
-    saveConfig(newConfig);
-  };
+    root.classList.add('dark');
+    root.style.colorScheme = 'dark';
+  }, []);
 
   if (isLoading) {
     return (
@@ -54,10 +39,7 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background relative">
-      {/* Background Effects */}
-      <div className="fixed inset-0 portfolio-gradient-soft opacity-30 pointer-events-none"></div>
-      
+    <div className="relative">
       {/* Admin Controls */}
       <AdminToggle onClick={() => setIsAdminOpen(true)} />
       
@@ -90,8 +72,8 @@ const Index = () => {
         onReset={resetConfig}
         onExport={exportConfig}
         onImport={importConfig}
-        theme={config.settings.theme}
-        onToggleTheme={handleThemeToggle}
+        theme="dark"
+        onToggleTheme={() => {}}
       />
     </div>
   );
