@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { CogIcon } from '@heroicons/react/24/outline';
 import { Button } from '@/components/ui/button';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 interface AdminToggleProps {
   onClick: () => void;
@@ -11,10 +12,10 @@ export const AdminToggle = ({ onClick }: AdminToggleProps) => {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      // Verifica se o cursor está próximo ao canto inferior direito (últimos 100px)
+      // Verifica se o cursor está próximo ao canto inferior direito (últimos 150px) - área maior
       const isNearBottomRight = 
-        window.innerHeight - e.clientY < 100 && 
-        window.innerWidth - e.clientX < 100;
+        window.innerHeight - e.clientY < 150 && 
+        window.innerWidth - e.clientX < 150;
       
       setIsVisible(isNearBottomRight);
       
@@ -25,7 +26,7 @@ export const AdminToggle = ({ onClick }: AdminToggleProps) => {
       if (isNearBottomRight) {
         const timeout = setTimeout(() => {
           setIsVisible(false);
-        }, 2000); // Esconde após 2 segundos sem movimento
+        }, 3000); // Esconde após 3 segundos - mais tempo
         
         setMouseTimeout(timeout);
       }
@@ -42,16 +43,26 @@ export const AdminToggle = ({ onClick }: AdminToggleProps) => {
   }, [mouseTimeout]);
 
   return (
-    <Button
-      variant="admin"
-      size="icon"
-      onClick={onClick}
-      className={`fixed bottom-5 right-5 z-50 w-12 h-12 rounded-full transition-all duration-300 ${
-        isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
-      }`}
-      aria-label="Open admin panel"
-    >
-      <CogIcon className="w-5 h-5" />
-    </Button>
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            variant="admin"
+            size="icon"
+            onClick={onClick}
+            className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full transition-all duration-300 shadow-lg ring-2 ring-white/20 ${
+              isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
+            }`}
+            aria-label="Open admin panel"
+          >
+            <CogIcon className="w-6 h-6" />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent side="left" className="bg-gray-900 text-white border-gray-700">
+          <p>Configurações do Portfólio</p>
+          <p className="text-xs text-gray-400">Clique para personalizar</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   );
 };

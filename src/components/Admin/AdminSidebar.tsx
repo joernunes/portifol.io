@@ -102,22 +102,41 @@ export const AdminSidebar = ({
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } flex flex-col`}
       >
-        <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-4 sm:space-y-6 mt-4">
-        {/* Header */}
-        {/* <div className="flex items-center justify-between  ">
-          
-          <h2 className="text-lg font-semibold text-gray-100">
-            fcfgfc
-          </h2> 
+        {/* Header com título e botão X */}
+        <div className="flex items-center justify-between p-4 border-b border-[#2a2a2a] bg-[#1C1C1E] -m-3 sm:-m-4 mb-4 sm:mb-6">
+          <h2 className="text-lg font-semibold text-white">
+            ⚙️ Configurações
+          </h2>
           <Button
             variant="ghost"
             size="icon"
             onClick={handleCancel}
-            className="h-8 w-8 text-gray-400 hover:bg-[#2a2a2a] hover:text-white"
+            className="h-10 w-10 text-gray-400 hover:bg-[#2a2a2a] hover:text-white rounded-full"
           >
-            <X className="h-4 w-4" />
+            <X className="h-5 w-5" />
           </Button>
-        </div> */}
+        </div>
+
+        {/* Preview Mode Toggle */}
+        <div className="bg-[#1C1C1E] rounded-lg p-4 mb-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h4 className="text-sm font-semibold text-gray-200">Modo Preview</h4>
+              <p className="text-xs text-gray-400">
+                Visualize mudanças em tempo real
+              </p>
+            </div>
+            <Button
+              variant="outline"
+              size="sm"
+              className="text-blue-400 border-blue-400/50 hover:bg-blue-400/10"
+            >
+              Ativado
+            </Button>
+          </div>
+        </div>
+
+        <div className="flex-1 overflow-y-auto space-y-4 sm:space-y-6">
 
         
           
